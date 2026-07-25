@@ -1,0 +1,14 @@
+def romantoint(romanInput):
+    roman = {"M:",1000,"D:",500,"C:",100,"L:",50,"X:",10,"I:",1}
+    resultinteger = 0
+
+    for i in range(0,len(romanInput)-1):
+        if roman[romanInput[i]] < roman[romanInput[i+1]]:
+            resultinteger-=roman[romanInput[i]]
+        else:
+            resultinteger+=roman[romanInput[i]]
+            
+    return resultinteger+roman[romanInput[-1]]
+
+roman = input("Enter any roman numeral: ")
+print("Integer Equivalent:",romantoint(roman))  
